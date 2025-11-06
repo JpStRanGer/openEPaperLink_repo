@@ -1,0 +1,7 @@
+[
+  { "rotate": 0 },
+
+  { "text": [148, 10, "STATUS", "fonts/bahnschrift30", 1, 1] },
+  { "line": [8, 35, 288, 35, 2] },
+  { "text": [148, 40, "LEDIG", "fonts/calibrib70", 2, 1] }
+]
