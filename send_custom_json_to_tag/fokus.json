@@ -1,0 +1,8 @@
+[
+  { "rotate": 0 },
+
+  { "text": [148, 10, "STATUS", "fonts/bahnschrift30", 1, 1] },
+  { "line": [8, 35, 288, 35, 2] },
+  { "text": [148, 40, "Fokuserer", "fonts/calibrib70", 2, 1] }
+  { "text": [148, 50, "Jeg er konsentrert, forstyr bare hvis det er veldig viktig.", "fonts/calibrib30", 2, 1] }
+]
