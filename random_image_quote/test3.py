@@ -69,9 +69,10 @@ def fetch_random_quote() -> Tuple[str, str]:
 
         return quote_text, author_name
 
-    except Exception:
+    except Exception as e :
         # fallback til lokal liste
         print(f"[WARNING] couldt get quote, use locale instead...")
+        print(f"Ekseption: {e}")
         return random.choice(QUOTES)
 
 
@@ -90,10 +91,15 @@ def fetch_random_online_background(size: Tuple[int, int]) -> Image.Image:
     url = f"https://picsum.photos/{width}/{height}?random={cache_bust}"
 
     print(f"[INFO] Requesting image from: {url} ....")
-    response = requests.get(url, timeout=120)
-    response.raise_for_status()
+    try:
+        response = requests.get(url, timeout=120)
+        response.raise_for_status()
 
-    img = Image.open(io.BytesIO(response.content)).convert("RGB")
+        img = Image.open(io.BytesIO(response.content)).convert("RGB")
+    except Exception as e:
+        print(F"[ERROR] Faild to get image... - msg: {e}")
+        return None
+
 
     # Øk kontrast litt så vi får tydelig mørkt/lyst
     enhancer = ImageEnhance.Contrast(img)
