@@ -39,6 +39,16 @@ EPAPER_RED   = (255, 0, 0)
 PALETTE = [EPAPER_WHITE, EPAPER_BLACK, EPAPER_RED]
 
 
+# -----------------------------------------------------------------------------
+# load font
+# -----------------------------------------------------------------------------
+
+def load_font(path: str, size: int) -> ImageFont.ImageFont:
+    try:
+        return ImageFont.truetype(path, size=size)
+    except OSError:
+        print(f"[WARNING] Could not load font '{path}', using default font.")
+        return ImageFont.load_default()
 
 # -----------------------------------------------------------------------------
 # Quote fetcher
@@ -56,7 +66,7 @@ def fetch_random_quote() -> Tuple[str, str]:
     Hvis noe feiler (nett nede, timeout, osv), så velger vi tilfeldig fra LOCAL_QUOTES.
     """
     try:
-        resp = requests.get("https://api.quotable.io/random", timeout=5)
+        resp = requests.get("https://api.quotable.io/random", timeout=5, verify=False)
         resp.raise_for_status()
         data = resp.json()
 
@@ -272,8 +282,8 @@ def generate_epaper_image() -> Image.Image:
     # 2. Velg sitat og tegn på høyre side
     quote, author = fetch_random_quote()
 
-    font_quote = ImageFont.truetype(FONT_PATH, size=FONT_SIZE_QUOTE)
-    font_author = ImageFont.truetype(FONT_PATH, size=FONT_SIZE_AUTHOR)
+    font_quote = load_font(FONT_PATH, FONT_SIZE_QUOTE)
+    font_author = load_font(FONT_PATH, FONT_SIZE_AUTHOR)
 
     draw_quote_panel(
         base_img=base,
