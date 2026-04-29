@@ -129,6 +129,7 @@ EOF
 }
 
 migrate_legacy_config() {
+  # Setter: $tags[min], $default_tag.  Nullstiller: $mac.
   # Gammelt format hadde flat `mac="..."`.  Hvis vi finner én slik MAC
   # uten tags-array, navngis den 'min' og config skrives om.
   [[ -n "${mac:-}" && ${#tags[@]} -eq 0 ]] || return 0
@@ -150,6 +151,7 @@ list_tags() {
 }
 
 run_setup() {
+  # Setter: $tags[<navn>], $default_tag (hvis ledig), $ap (ved første gang).
   if [[ ${#tags[@]} -eq 0 ]]; then
     cat >&2 <<'EOF'
 
@@ -183,6 +185,7 @@ EOF
 }
 
 choose_tag() {
+  # Setter: $tag_name, $mac.
   # Viser numerert liste og leser inn tall *eller* navn.
   local names=()
   mapfile -t names < <(printf '%s\n' "${!tags[@]}" | sort)
@@ -215,6 +218,7 @@ choose_tag() {
 }
 
 resolve_tag() {
+  # Setter: $mac, $tag_name.  Kan kalle die() ved konflikt eller ukjent navn.
   # Bestemmer endelig $mac (og evt $tag_name) fra flagg + config.
   [[ -n "$mac" && -n "$tag_name" ]] && die "Bruk enten -m MAC eller -n NAVN, ikke begge"
 
@@ -259,6 +263,8 @@ post() {
 }
 
 parse_args() {
+  # Setter: $ap, $mac, $tag_name, $size, $text, $header, $color,
+  #         $header_color, $do_setup.  Avanserer $OPTIND.
   while getopts ":a:m:n:s:t:H:c:C:Sh" opt; do
     case "$opt" in
       a) ap="$OPTARG" ;;
