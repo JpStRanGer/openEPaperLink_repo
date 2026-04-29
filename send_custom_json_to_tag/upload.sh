@@ -258,50 +258,63 @@ post() {
     --data-urlencode "json${2}"
 }
 
-[[ -f "$CONFIG" ]] && source "$CONFIG"
-migrate_legacy_config
+parse_args() {
+  while getopts ":a:m:n:s:t:H:c:C:Sh" opt; do
+    case "$opt" in
+      a) ap="$OPTARG" ;;
+      m) mac="$OPTARG" ;;
+      n) tag_name="$OPTARG" ;;
+      s) size="$OPTARG" ;;
+      t) text="$OPTARG" ;;
+      H) header="$OPTARG" ;;
+      c) color="$OPTARG" ;;
+      C) header_color="$OPTARG" ;;
+      S) do_setup=1 ;;
+      h) usage; exit 0 ;;
+      \?) die "Ukjent flagg: -$OPTARG" ;;
+      :)  die "Flagg -$OPTARG krever et argument" ;;
+    esac
+  done
+}
 
-while getopts ":a:m:n:s:t:H:c:C:Sh" opt; do
-  case "$opt" in
-    a) ap="$OPTARG" ;;
-    m) mac="$OPTARG" ;;
-    n) tag_name="$OPTARG" ;;
-    s) size="$OPTARG" ;;
-    t) text="$OPTARG" ;;
-    H) header="$OPTARG" ;;
-    c) color="$OPTARG" ;;
-    C) header_color="$OPTARG" ;;
-    S) do_setup=1 ;;
-    h) usage; exit 0 ;;
-    \?) die "Ukjent flagg: -$OPTARG" ;;
-    :)  die "Flagg -$OPTARG krever et argument" ;;
-  esac
-done
-shift $((OPTIND - 1))
+dispatch() {
+  # $@ er positional args som er igjen etter flagg-parsing.
+  is_valid_mac "$mac"  || die "MAC '$mac' har ikke gyldig format (16 hex-tegn)"
+  is_valid_host "$ap"  || die "AP-adresse '$ap' har ikke gyldig format"
 
-if [[ $do_setup -eq 1 ]]; then
-  run_setup
-  exit 0
-fi
+  [[ -n "$text" && $# -ge 1 ]] && die "Kan ikke kombinere -t og FIL"
+  [[ -z "$text" && $# -lt 1 ]] && die "Oppgi enten -t TEKST eller FIL"
 
-if [[ -z "$ap" || ${#tags[@]} -eq 0 ]]; then
-  run_setup
-fi
+  if [[ -z "$text" ]]; then
+    local file="$1"
+    post "$file" "@${file}"
+    return 0
+  fi
 
-resolve_tag
+  local payload
+  payload=$(python3 "$RENDER" --size "$size" --header "$header" --text "$text" \
+    --color "$color" --header-color "$header_color")
+  post "$payload" "=${payload}"
+}
 
-is_valid_mac "$mac"  || die "MAC '$mac' har ikke gyldig format (16 hex-tegn)"
-is_valid_host "$ap"  || die "AP-adresse '$ap' har ikke gyldig format"
+main() {
+  [[ -f "$CONFIG" ]] && source "$CONFIG"
+  migrate_legacy_config
 
-[[ -n "$text" && $# -ge 1 ]] && die "Kan ikke kombinere -t og FIL"
-[[ -z "$text" && $# -lt 1 ]] && die "Oppgi enten -t TEKST eller FIL"
+  parse_args "$@"
+  shift $((OPTIND - 1))
 
-if [[ -z "$text" ]]; then
-  file="$1"
-  post "$file" "@${file}"
-  exit 0
-fi
+  if [[ $do_setup -eq 1 ]]; then
+    run_setup
+    return 0
+  fi
 
-payload=$(python3 "$RENDER" --size "$size" --header "$header" --text "$text" \
-  --color "$color" --header-color "$header_color")
-post "$payload" "=${payload}"
+  if [[ -z "$ap" || ${#tags[@]} -eq 0 ]]; then
+    run_setup
+  fi
+
+  resolve_tag
+  dispatch "$@"
+}
+
+main "$@"
