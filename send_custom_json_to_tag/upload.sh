@@ -197,11 +197,18 @@ choose_tag() {
     ((i++)) || true
   done
 
-  local default_label="${default_tag:-${names[0]}}"
-  local choice
+  local default_label=""
+  if [[ -n "$default_tag" && -n "${tags[$default_tag]:-}" ]]; then
+    default_label="$default_tag"
+  elif [[ -n "$default_tag" ]]; then
+    echo "  (advarsel: default_tag='$default_tag' i config.sh finnes ikke som tag)" >&2
+  fi
+
+  local choice prompt_text="Valg"
+  [[ -n "$default_label" ]] && prompt_text="Valg [$default_label]"
   while true; do
-    read -r -p "Valg [$default_label]: " choice
-    choice="${choice:-$default_label}"
+    read -r -p "$prompt_text: " choice
+    [[ -z "$choice" && -n "$default_label" ]] && choice="$default_label"
 
     if [[ "$choice" =~ ^[0-9]+$ ]] && (( choice >= 1 && choice <= ${#names[@]} )); then
       tag_name="${names[$((choice-1))]}"
