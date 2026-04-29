@@ -40,8 +40,6 @@ COLORS = {
 # finnes *ikke* — AP-en faller tilbake til en liten default-font hvis
 # vi bruker den.
 HEADER_FONTS = [
-    ("calibrib80",    80),
-    ("calibrib70",    70),
     ("calibrib40",    40),
     ("bahnschrift30", 30),
     ("bahnschrift24", 24),
