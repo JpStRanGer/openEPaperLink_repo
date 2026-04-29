@@ -68,23 +68,20 @@ DIGIT_CHARS = set("0123456789 ")
 class Preset:
     width: int
     height: int
-    header_y: int
-    line_y: int
-    line_thickness: int
-    body_y: int
+    line_y: int          # y-posisjon for skillelinjen (toppside)
+    line_thickness: int  # tykkelse i piksler
 
 
 # Oppløsninger verifisert mot https://github.com/OpenEPaperLink/OpenEPaperLink/wiki.
-# y-verdiene er valgt slik at HEADER_FONTS og BODY_FONTS får plass til sine
-# største kandidater der tag-høyden tillater det.
+# Header sentreres vertikalt i [0, line_y]; body sentreres i [line_y+line_thickness, height].
 PRESETS: dict[str, Preset] = {
-    "1.54": Preset(152, 152,  2,  28, 1,  34),  # ST-GR16000
-    "2.6":  Preset(296, 152,  6,  52, 2,  58),  # M2, oppgitt av bruker
-    "2.7":  Preset(264, 176,  6,  54, 2,  62),  # ST-GR27000
-    "2.9":  Preset(296, 128,  2,  36, 2,  42),  # ST-GR29000
-    "3.5":  Preset(384, 184,  6,  92, 2,  96),  # HS BWY 3.5 (hwType 0x74)
-    "4.2":  Preset(400, 300, 10,  62, 2,  72),  # ST-GR42
-    "7.5":  Preset(640, 384, 15,  75, 3,  85),  # ST-GR750BN
+    "1.54": Preset(152, 152,  28, 1),  # ST-GR16000
+    "2.6":  Preset(296, 152,  52, 2),  # M2, oppgitt av bruker
+    "2.7":  Preset(264, 176,  54, 2),  # ST-GR27000
+    "2.9":  Preset(296, 128,  36, 2),  # ST-GR29000
+    "3.5":  Preset(384, 184,  92, 2),  # HS BWY 3.5 (hwType 0x74)
+    "4.2":  Preset(400, 300,  62, 2),  # ST-GR42
+    "7.5":  Preset(640, 384,  75, 3),  # ST-GR750BN
 }
 
 
@@ -190,19 +187,20 @@ def build_payload(preset: Preset, header: str, body: str,
     usable_w = preset.width - 2 * MARGIN
     center_x = preset.width // 2
 
-    header_area_h = max(1, preset.line_y - preset.header_y - 2)
+    header_area_h = max(1, preset.line_y)
     h_name, h_size, h_lines = fit(header, usable_w, header_area_h, HEADER_FONTS)
+    header_block = block_height(len(h_lines), h_size)
+    header_top = max(0, (preset.line_y - header_block) // 2)
 
     body_area_top = preset.line_y + preset.line_thickness
     body_area_h = max(1, preset.height - body_area_top)
     b_name, b_size, b_lines = fit(body, usable_w, body_area_h, body_fonts_for(body))
-
     body_block = block_height(len(b_lines), b_size)
     body_top = body_area_top + max(0, (body_area_h - body_block) // 2)
 
     ops: list[dict] = [{"rotate": rotate}]
 
-    y = preset.header_y
+    y = header_top
     for line in h_lines:
         ops.append(text_op(center_x, y, line, h_name, header_color))
         y += line_pitch(h_size)
