@@ -40,6 +40,8 @@ COLORS = {
 # finnes *ikke* — AP-en faller tilbake til en liten default-font hvis
 # vi bruker den.
 HEADER_FONTS = [
+    ("calibrib80",    80),
+    ("calibrib70",    70),
     ("calibrib40",    40),
     ("bahnschrift30", 30),
     ("bahnschrift24", 24),
@@ -82,7 +84,7 @@ PRESETS: dict[str, Preset] = {
     "2.6":  Preset(296, 152,  6,  52, 2,  58),  # M2, oppgitt av bruker
     "2.7":  Preset(264, 176,  6,  54, 2,  62),  # ST-GR27000
     "2.9":  Preset(296, 128,  2,  36, 2,  42),  # ST-GR29000
-    "3.5":  Preset(284, 184,  6,  60, 2,  66),  # HS BWY 3.5 (hwType 0x74)
+    "3.5":  Preset(284, 184,  6,  80, 2,  84),  # HS BWY 3.5 (hwType 0x74)
     "4.2":  Preset(400, 300, 10,  62, 2,  72),  # ST-GR42
     "7.5":  Preset(640, 384, 15,  75, 3,  85),  # ST-GR750BN
 }
