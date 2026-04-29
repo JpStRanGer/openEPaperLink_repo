@@ -185,7 +185,8 @@ def body_fonts_for(text: str) -> list[tuple[str, int]]:
 
 
 def build_payload(preset: Preset, header: str, body: str,
-                  header_color: int, body_color: int) -> list[dict]:
+                  header_color: int, body_color: int,
+                  rotate: int) -> list[dict]:
     usable_w = preset.width - 2 * MARGIN
     center_x = preset.width // 2
 
@@ -199,7 +200,7 @@ def build_payload(preset: Preset, header: str, body: str,
     body_block = block_height(len(b_lines), b_size)
     body_top = body_area_top + max(0, (body_area_h - body_block) // 2)
 
-    ops: list[dict] = [{"rotate": 0}]
+    ops: list[dict] = [{"rotate": rotate}]
 
     y = preset.header_y
     for line in h_lines:
@@ -233,6 +234,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
                         help="farge på hovedtekst (black | red | 1 | 2)")
     parser.add_argument("--header-color", type=parse_color, default=COLOR_NORMAL,
                         help="farge på topptekst (black | red | 1 | 2)")
+    parser.add_argument("--rotate", type=int, choices=(0, 1, 2, 3), default=0,
+                        help="canvas-rotasjon: 0 (native) | 1 (90° CW) | 2 (180°) | 3 (90° CCW)")
     return parser.parse_args(argv)
 
 
@@ -247,7 +250,7 @@ def main(argv: list[str]) -> int:
     preset = PRESETS[args.size]
     header = process_escapes(args.header)
     body = process_escapes(args.text)
-    payload = build_payload(preset, header, body, args.header_color, args.color)
+    payload = build_payload(preset, header, body, args.header_color, args.color, args.rotate)
     print(format_payload(payload))
     return 0
 

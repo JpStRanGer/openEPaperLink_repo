@@ -24,6 +24,7 @@ header="STATUS"
 text=""
 color="black"
 header_color="black"
+rotate="0"
 do_setup=0
 
 usage() {
@@ -42,6 +43,8 @@ Bruk: $(basename "$0") [-a AP] [-m MAC | -n NAVN] [-s STR] (-t TEKST [-H TOPP] |
   -c FARGE   Farge på hovedtekst: black | red | svart | rød | 1 | 2
              (standard: ${color}; red = aksentfarge på BWR-tagger)
   -C FARGE   Farge på topptekst (standard: ${header_color})
+  -r N       Canvas-rotasjon: 0 (native) | 1 (90° CW) | 2 (180°) | 3 (90° CCW)
+             (standard: ${rotate}; bruk hvis taggen er montert i annen orientering)
   -S         Interaktivt oppsett: legg til tag eller kjør første gang
   FIL        Ferdig JSON-fil som sendes uendret.
 
@@ -271,8 +274,8 @@ post() {
 
 parse_args() {
   # Setter: $ap, $mac, $tag_name, $size, $text, $header, $color,
-  #         $header_color, $do_setup.  Avanserer $OPTIND.
-  while getopts ":a:m:n:s:t:H:c:C:Sh" opt; do
+  #         $header_color, $rotate, $do_setup.  Avanserer $OPTIND.
+  while getopts ":a:m:n:s:t:H:c:C:r:Sh" opt; do
     case "$opt" in
       a) ap="$OPTARG" ;;
       m) mac="$OPTARG" ;;
@@ -282,6 +285,7 @@ parse_args() {
       H) header="$OPTARG" ;;
       c) color="$OPTARG" ;;
       C) header_color="$OPTARG" ;;
+      r) rotate="$OPTARG" ;;
       S) do_setup=1 ;;
       h) usage; exit 0 ;;
       \?) die "Ukjent flagg: -$OPTARG" ;;
@@ -306,7 +310,7 @@ dispatch() {
 
   local payload
   payload=$(python3 "$RENDER" --size "$size" --header "$header" --text "$text" \
-    --color "$color" --header-color "$header_color")
+    --color "$color" --header-color "$header_color" --rotate "$rotate")
   post "$payload" "=${payload}"
 }
 
