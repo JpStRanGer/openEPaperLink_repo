@@ -79,7 +79,7 @@ PRESETS: dict[str, Preset] = {
     "2.6":  Preset(296, 152,  52, 2),  # M2, oppgitt av bruker
     "2.7":  Preset(264, 176,  54, 2),  # ST-GR27000
     "2.9":  Preset(296, 128,  36, 2),  # ST-GR29000
-    "3.5":  Preset(384, 184,  92, 2),  # HS BWY 3.5 (hwType 0x74)
+    "3.5":  Preset(384, 184,  48, 2),  # HS BWY 3.5 (hwType 0x74)
     "4.2":  Preset(400, 300,  62, 2),  # ST-GR42
     "7.5":  Preset(640, 384,  75, 3),  # ST-GR750BN
 }
