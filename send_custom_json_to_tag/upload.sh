@@ -92,7 +92,17 @@ die() {
 }
 
 is_valid_mac() {
-  [[ "$1" =~ ^[0-9A-Fa-f]{16}$ ]]
+  # Godtar 1-16 hex-tegn.  Tagger trykker ofte kun de siste sifrene
+  # (de ledende nullene utelatt); normalize_mac padder dem på etterpå.
+  [[ "$1" =~ ^[0-9A-Fa-f]{1,16}$ ]]
+}
+
+normalize_mac() {
+  # Padder med ledende '0' til 16 tegn, og uppercaser.  Antar input
+  # allerede er gyldig (sjekk med is_valid_mac først).
+  local m="${1^^}"
+  while (( ${#m} < 16 )); do m="0$m"; done
+  printf '%s\n' "$m"
 }
 
 is_valid_host() {
@@ -232,13 +242,14 @@ EOF
 
   local name new_mac new_size new_rotate
   name=$(prompt "Navn på tag (f.eks. 'min', 'kollega')" "" is_valid_name)
-  new_mac=$(prompt "MAC for $name" "" is_valid_mac)
+  new_mac=$(prompt "MAC for $name (kan utelate ledende 0-er)" "" is_valid_mac)
+  new_mac=$(normalize_mac "$new_mac")
   new_size=$(prompt "Størrelse" "$DEFAULT_SIZE" is_valid_size)
   new_rotate=$(prompt "Rotasjon (0/1/2/3)" "$DEFAULT_ROTATE" is_valid_rotate)
-  tags["$name"]="${new_mac^^}|${new_size}|${new_rotate}"
+  tags["$name"]="${new_mac}|${new_size}|${new_rotate}"
   [[ -z "$default_tag" ]] && default_tag="$name"
   write_config
-  echo "Lagret: $name = ${new_mac^^} (size=${new_size}, rotate=${new_rotate})" >&2
+  echo "Lagret: $name = ${new_mac} (size=${new_size}, rotate=${new_rotate})" >&2
 }
 
 choose_tag() {
@@ -287,7 +298,8 @@ resolve_tag() {
   [[ -n "$mac" && -n "$tag_name" ]] && die "Bruk enten -m MAC eller -n NAVN, ikke begge"
 
   if [[ -n "$mac" ]]; then
-    mac="${mac^^}"
+    is_valid_mac "$mac" || die "MAC '$mac' har ugyldig format (1-16 hex-tegn)"
+    mac=$(normalize_mac "$mac")
     # Berik output med navn hvis MAC matcher en kjent tag.
     local n
     for n in "${!tags[@]}"; do
