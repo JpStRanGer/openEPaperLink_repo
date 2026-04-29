@@ -70,10 +70,13 @@ die() {
 }
 
 post() {
-  # $1 er verdien til 'json'-feltet; prefiks '@' for filreferanse, '=' for inline.
-  curl -sS -X POST "http://${ap}/jsonupload" \
+  # $1 = etikett vi skriver ut (filnavn eller selve JSON-en).
+  # $2 = verdien til 'json'-feltet til curl; prefiks '@' for fil, '=' for inline.
+  echo "→ POST http://${ap}/jsonupload   mac=${mac}"
+  echo "$1"
+  curl -sS -w '\n' -X POST "http://${ap}/jsonupload" \
     --data-urlencode "mac=${mac}" \
-    --data-urlencode "json${1}"
+    --data-urlencode "json${2}"
 }
 
 is_valid_mac() {
@@ -168,12 +171,10 @@ is_valid_host "$ap"  || die "AP-adresse '$ap' har ikke gyldig format"
 
 if [[ -z "$text" ]]; then
   file="$1"
-  echo "$file"
-  post "@${file}"
+  post "$file" "@${file}"
   exit 0
 fi
 
 payload=$(python3 "$RENDER" --size "$size" --header "$header" --text "$text" \
   --color "$color" --header-color "$header_color")
-echo "$payload"
-post "=${payload}"
+post "$payload" "=${payload}"
