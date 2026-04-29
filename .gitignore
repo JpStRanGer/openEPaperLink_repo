@@ -8,3 +8,6 @@ __pycache__/
 # Editors / OS
 .DS_Store
 *.swp
+
+# Per-bruker oppsett (MAC + AP-IP) — skal aldri committes
+send_custom_json_to_tag/config.sh
