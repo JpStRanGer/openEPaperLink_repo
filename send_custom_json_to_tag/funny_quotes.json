@@ -1,0 +1,222 @@
+{
+  "source": {
+    "title": "135 Funny Quotes That Are Too Good Not to Share",
+    "url": "https://www.shutterstock.com/blog/funny-quotes",
+    "author": "Tammy Danan",
+    "publisher": "Shutterstock Blog",
+    "published_date": "2025-04-30",
+    "updated_date": "2025-05-01",
+    "scraped_date": "2026-04-23",
+    "total_quotes": 135,
+    "total_categories": 9
+  },
+  "categories": [
+    {
+      "category_id": "funny_inspirational",
+      "category_name": "Funny Inspirational Quotes",
+      "description": "Witty quotes that give you a mental and emotional boost when life feels too much to bear.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 1, "text": "Success is like trying to assemble IKEA furniture: There will be tears, confusion, and extra pieces, but eventually, you'll have something to show for it.", "author": "Amy Poehler", "is_anonymous": false, "word_count": 26},
+        {"id": 2, "text": "Dream big, but also dream practical. Nobody ever changed the world by hitting the snooze button, but sometimes a power nap is the strategy you need.", "author": "Simon Sinek", "is_anonymous": false, "word_count": 27},
+        {"id": 3, "text": "The journey of a thousand miles begins with a single step, usually in the wrong direction, followed by checking your GPS.", "author": "Mindy Kaling", "is_anonymous": false, "word_count": 21},
+        {"id": 4, "text": "Be the change you want to see in the world, unless the change you want to see is everyone wearing capes. That might take more convincing.", "author": "Bill Murray", "is_anonymous": false, "word_count": 27},
+        {"id": 5, "text": "You miss 100% of the shots you don't take, and about 80% of the ones you do. But those 20% make for a great highlight reel.", "author": "Shaquille O'Neal", "is_anonymous": false, "word_count": 28},
+        {"id": 6, "text": "Your potential is like your phone battery: it's probably at 30% when you think it's fully charged, and capable of so much more than you realize.", "author": "Conan O'Brien", "is_anonymous": false, "word_count": 27},
+        {"id": 7, "text": "Persistence is important, but so is knowing when to pivot. The definition of insanity isn't just doing the same thing repeatedly, it's doing it while expecting your phone to charge with an unplugged cable.", "author": "Tina Fey", "is_anonymous": false, "word_count": 35},
+        {"id": 8, "text": "Life is 10% what happens to you and 90% how you react to it. I recommend reacting with both appropriate emotional intelligence and occasional inappropriate dance moves.", "author": "Ryan Reynolds", "is_anonymous": false, "word_count": 28},
+        {"id": 9, "text": "The greatest glory isn't in never falling, but in getting up every time we fall and eventually investing in better shoes.", "author": "Emma Thompson", "is_anonymous": false, "word_count": 22},
+        {"id": 10, "text": "The best way to predict the future is to create it, preferably after your second cup of coffee when your brain is actually functioning.", "author": "Trevor Noah", "is_anonymous": false, "word_count": 24},
+        {"id": 11, "text": "Courage isn't the absence of fear, it's posting that unflattering group photo where everyone else looks amazing and tagging yourself anyway.", "author": "Jennifer Lawrence", "is_anonymous": false, "word_count": 22},
+        {"id": 12, "text": "When life gives you lemons, remember they cost like $1 each now. That's not just lemonade, that's an investment portfolio.", "author": "John Mulaney", "is_anonymous": false, "word_count": 21},
+        {"id": 13, "text": "Failure is just success in progress. Sometimes very, very slow progress that requires pizza and a pep talk.", "author": "Kristen Wiig", "is_anonymous": false, "word_count": 18},
+        {"id": 14, "text": "The difference between a successful person and others is not lack of strength or knowledge, but rather the ability to keep going while simultaneously wondering if they're doing anything right.", "author": "Seth Rogen", "is_anonymous": false, "word_count": 30},
+        {"id": 15, "text": "Believe you can and you're halfway there. The other half is actually getting off the couch. That's the tricky part.", "author": "Terry Crews", "is_anonymous": false, "word_count": 21}
+      ]
+    },
+    {
+      "category_id": "funny_life",
+      "category_name": "Funny Quotes About Life",
+      "description": "Witty observations about everyday human experiences that commonly appear on office posters, coffee mugs, and social media.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 16, "text": "Common sense is like deodorant. The people who need it most never use it.", "author": "Anonymous", "is_anonymous": true, "word_count": 14},
+        {"id": 17, "text": "I walk around like everything's fine, but deep down, inside my shoe, my sock is sliding off.", "author": "Anonymous", "is_anonymous": true, "word_count": 17},
+        {"id": 18, "text": "As you get older, three things happen. The first is your memory goes, and I can't remember the other two.", "author": "Sir Norman Wisdom", "is_anonymous": false, "word_count": 20},
+        {"id": 19, "text": "I'm at a place in my life when errands are starting to count as going out.", "author": "Anonymous", "is_anonymous": true, "word_count": 16},
+        {"id": 20, "text": "A good rule to remember for life is that when it comes to plastic surgery and sushi, never be attracted by a bargain.", "author": "Graham Norton", "is_anonymous": false, "word_count": 23},
+        {"id": 21, "text": "I'm not great at the advice. Can I interest you in a sarcastic comment?", "author": "Chandler Bing", "source": "Friends", "source_type": "tv_show", "is_anonymous": false, "word_count": 13},
+        {"id": 22, "text": "A day without sunshine is like, you know, night.", "author": "Steve Martin", "is_anonymous": false, "word_count": 9},
+        {"id": 23, "text": "I never forget a face, but in your case, I'll be glad to make an exception.", "author": "Groucho Marx", "is_anonymous": false, "word_count": 16},
+        {"id": 24, "text": "You know you're getting old when you stoop to tie your shoelaces and wonder what else you could do while you're down there.", "author": "George Burns", "is_anonymous": false, "word_count": 23},
+        {"id": 25, "text": "Outside of a dog, a book is man's best friend. Inside of a dog, it's too dark to read.", "author": "Groucho Marx", "is_anonymous": false, "word_count": 19},
+        {"id": 26, "text": "My ability to turn good news into anxiety is rivaled only by my ability to turn anxiety into chin acne.", "author": "Tina Fey", "is_anonymous": false, "word_count": 20},
+        {"id": 27, "text": "I saw a study that said speaking in front of a crowd is considered the number one fear of the average person. Number two was death. This means to the average person, if you have to be at a funeral, you would rather be in the casket than doing the eulogy.", "author": "Jerry Seinfeld", "is_anonymous": false, "word_count": 52},
+        {"id": 28, "text": "Insomnia sharpens your math skills because you spend all night calculating how much sleep you'll get if you're able to 'fall asleep right now.'", "author": "Anonymous", "is_anonymous": true, "word_count": 24},
+        {"id": 29, "text": "I love airports because the rules of society don't apply. Eat a pizza and have a glass of wine at 7 am while in track pants. Nobody cares.", "author": "Anonymous", "is_anonymous": true, "word_count": 28},
+        {"id": 30, "text": "Do not take life too seriously. You will never get out of it alive.", "author": "Elbert Hubbard", "is_anonymous": false, "word_count": 14}
+      ]
+    },
+    {
+      "category_id": "funny_movie",
+      "category_name": "Funny Movie Quotes",
+      "description": "Iconic, quotable lines from movies and TV that appear in everyday conversations, memes, and social media.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 31, "text": "Gentlemen, you can't fight in here. This is the war room.", "author": "President Merkin Muffley", "source": "Dr. Strangelove", "source_type": "movie", "is_anonymous": false, "word_count": 11},
+        {"id": 32, "text": "I don't know how to put this, but I'm kind of a big deal.", "author": "Ron Burgundy", "source": "Anchorman", "source_type": "movie", "is_anonymous": false, "word_count": 15},
+        {"id": 33, "text": "It's just a flesh wound.", "author": "Black Knight", "source": "Monty Python and the Holy Grail", "source_type": "movie", "is_anonymous": false, "word_count": 5},
+        {"id": 34, "text": "My mother always used to say: The older you get, the better you get, unless you're a banana.", "author": "Rose", "source": "The Golden Girls", "source_type": "tv_show", "is_anonymous": false, "word_count": 18},
+        {"id": 35, "text": "I'm at my most attractive when you can't see me.", "author": "Lizzie Maguire", "source": "The Lizzie McGuire Movie", "source_type": "movie", "is_anonymous": false, "word_count": 10},
+        {"id": 36, "text": "If I'm not back in five minutes, just wait longer.", "author": "Ace Ventura", "source": "Ace Ventura: Pet Detective", "source_type": "movie", "is_anonymous": false, "word_count": 10},
+        {"id": 37, "text": "Why don't you make like a tree and get out of here?", "author": "Biff Tannen", "source": "Back to the Future", "source_type": "movie", "is_anonymous": false, "word_count": 12},
+        {"id": 38, "text": "It's so fluffy: I'm gonna die!", "author": "Agnes", "source": "Despicable Me", "source_type": "movie", "is_anonymous": false, "word_count": 6},
+        {"id": 39, "text": "What we've got here is failure to communicate.", "author": "Captain", "source": "Cool Hand Luke", "source_type": "movie", "is_anonymous": false, "word_count": 8},
+        {"id": 40, "text": "Ned, I would love to stand here and talk with you—but I'm not going to.", "author": "Phil Connors", "source": "Groundhog Day", "source_type": "movie", "is_anonymous": false, "word_count": 15},
+        {"id": 41, "text": "You sit on a throne of lies.", "author": "Buddy", "source": "Elf", "source_type": "movie", "is_anonymous": false, "word_count": 7},
+        {"id": 42, "text": "I'm just one stomach flu away from my goal weight.", "author": "Emily Charlton", "source": "The Devil Wears Prada", "source_type": "movie", "is_anonymous": false, "word_count": 10},
+        {"id": 43, "text": "I'm not like a regular mom, I'm a cool mom.", "author": "Mrs. George", "source": "Mean Girls (2004)", "source_type": "movie", "is_anonymous": false, "word_count": 10},
+        {"id": 44, "text": "She gave me a bunch of crap about me not listening to her, or something. I don't know, I wasn't really paying attention.", "author": "Harry Dunne", "source": "Dumb and Dumber", "source_type": "movie", "is_anonymous": false, "word_count": 23},
+        {"id": 45, "text": "If you ain't first, you're last.", "author": "Ricky Bobby", "source": "Talladega Nights: The Ballad of Ricky Bobby", "source_type": "movie", "is_anonymous": false, "word_count": 6}
+      ]
+    },
+    {
+      "category_id": "funny_work",
+      "category_name": "Funny Quotes About Work",
+      "description": "Workplace humor that lightens the mood — great for posters, sticky notes, or presentations.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 46, "text": "I always arrive late at the office, but I make up for it by leaving early.", "author": "Charles Lamb", "is_anonymous": false, "word_count": 16},
+        {"id": 47, "text": "I like work. It fascinates me. I can sit and look at it for hours.", "author": "Jerome K. Jerome", "is_anonymous": false, "word_count": 15},
+        {"id": 48, "text": "The best way to appreciate your job is to imagine yourself without one.", "author": "Oscar Wilde", "is_anonymous": false, "word_count": 13},
+        {"id": 49, "text": "No man goes before his time: Unless his boss leaves early.", "author": "Groucho Marx", "is_anonymous": false, "word_count": 11},
+        {"id": 50, "text": "People say nothing is impossible, but I do nothing every day.", "author": "Winnie the Pooh", "is_anonymous": false, "word_count": 11},
+        {"id": 51, "text": "Never put off till tomorrow what you can do the day after tomorrow just as well.", "author": "Mark Twain", "is_anonymous": false, "word_count": 16},
+        {"id": 52, "text": "If my boss knew how unproductive I am on Fridays, he wouldn't want me here either.", "author": "James Johnson", "is_anonymous": false, "word_count": 16},
+        {"id": 53, "text": "I am a friend of the working man, and I would rather be his friend than be one.", "author": "Clarence Darrow", "is_anonymous": false, "word_count": 18},
+        {"id": 54, "text": "Here's some advice: At a job interview, tell them you're willing to give 110 percent. Unless the job is a statistician.", "author": "Adam Gropman", "is_anonymous": false, "word_count": 21},
+        {"id": 55, "text": "By all means, move at a glacial pace. You know how that thrills me.", "author": "Miranda Priestly", "source": "The Devil Wears Prada", "source_type": "movie", "is_anonymous": false, "word_count": 14},
+        {"id": 56, "text": "I choose a lazy person to do a hard job because a lazy person will find an easy way to do it.", "author": "Bill Gates", "is_anonymous": false, "word_count": 22},
+        {"id": 57, "text": "If you think your boss is stupid, remember: You wouldn't have a job if he were any smarter.", "author": "John Gotti", "is_anonymous": false, "word_count": 17},
+        {"id": 58, "text": "If hard work is the key to success, most people would rather pick the lock.", "author": "Claude McDonald", "is_anonymous": false, "word_count": 15},
+        {"id": 59, "text": "If you had to identify in one word the reason why the human race has not achieved and never will achieve its' full potential, that word would be 'meetings.'", "author": "Dave Barry", "is_anonymous": false, "word_count": 30},
+        {"id": 60, "text": "Every Friday, I like to high-five myself for getting through another week on little more than caffeine, willpower, and inappropriate humor.", "author": "Nanea Hoffman", "is_anonymous": false, "word_count": 22}
+      ]
+    },
+    {
+      "category_id": "short_funny",
+      "category_name": "Short Funny Quotes",
+      "description": "Bite-sized witticisms that deliver maximum impact with minimal words.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 61, "text": "Reality continues to ruin my life.", "author": "Bill Watterson", "is_anonymous": false, "word_count": 6},
+        {"id": 62, "text": "I'm not lazy, I'm just in energy-saving mode.", "author": "Dancing Snail", "is_anonymous": false, "word_count": 8},
+        {"id": 63, "text": "I'm not arguing, I'm just explaining why I'm right.", "author": "Rick and Morty", "source": "Rick and Morty", "source_type": "tv_show", "is_anonymous": false, "word_count": 9},
+        {"id": 64, "text": "I don't need a hairstylist, my pillow gives me a new hairstyle every morning.", "author": "Anonymous", "is_anonymous": true, "word_count": 14},
+        {"id": 65, "text": "My bed is a magical place where I suddenly remember everything I was supposed to do.", "author": "Anonymous", "is_anonymous": true, "word_count": 16},
+        {"id": 66, "text": "I intend to live forever. So far, so good.", "author": "Steven Wright", "is_anonymous": false, "word_count": 9},
+        {"id": 67, "text": "Did you fall from heaven? Because so did Satan.", "author": "Anonymous", "is_anonymous": true, "word_count": 9},
+        {"id": 68, "text": "I'm not weird, I'm limited edition.", "author": "J.T. Geissinger", "is_anonymous": false, "word_count": 6},
+        {"id": 69, "text": "I used to think I was indecisive, but now I'm not so sure.", "author": "Anonymous", "is_anonymous": true, "word_count": 13},
+        {"id": 70, "text": "I put the 'pro' in procrastinate.", "author": "Anonymous", "is_anonymous": true, "word_count": 6},
+        {"id": 71, "text": "Life is short. Smile while you still have teeth.", "author": "Mallory Hopkins", "is_anonymous": false, "word_count": 9},
+        {"id": 72, "text": "I used to jog, but the ice cubes kept falling out of my glass.", "author": "David Lee Roth", "is_anonymous": false, "word_count": 14},
+        {"id": 73, "text": "I may be wrong, but it's highly unlikely.", "author": "Audrey Hepburn", "is_anonymous": false, "word_count": 8},
+        {"id": 74, "text": "Think like a proton. Always positive.", "author": "Anonymous", "is_anonymous": true, "word_count": 6},
+        {"id": 75, "text": "I didn't give you the finger, you earned it.", "author": "Bill Murray", "is_anonymous": false, "word_count": 9}
+      ]
+    },
+    {
+      "category_id": "funny_birthday",
+      "category_name": "Funny Birthday Quotes",
+      "description": "Humorous messages about aging, cake-eating, and growing another year wiser — or simply older.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 76, "text": "Age is merely the number of years the world has been enjoying you.", "author": "Anonymous", "is_anonymous": true, "word_count": 13},
+        {"id": 77, "text": "You know you're getting old when the candles cost more than the cake.", "author": "Bob Hope", "is_anonymous": false, "word_count": 13},
+        {"id": 78, "text": "Birthdays are good for you. Statistics show that people who have the most live the longest.", "author": "Larry Lorenzoni", "is_anonymous": false, "word_count": 16},
+        {"id": 79, "text": "You're not getting older, you're just becoming a classic.", "author": "Anonymous", "is_anonymous": true, "word_count": 9},
+        {"id": 80, "text": "I'm not aging, I'm marinating to perfection.", "author": "Anonymous", "is_anonymous": true, "word_count": 7},
+        {"id": 81, "text": "Age is an issue of mind over matter. If you don't mind, it doesn't matter.", "author": "Mark Twain", "is_anonymous": false, "word_count": 15},
+        {"id": 82, "text": "A birthday is just the first day of another 365-day journey around the sun. Enjoy the trip!", "author": "Anonymous", "is_anonymous": true, "word_count": 17},
+        {"id": 83, "text": "Don't worry about your age. You're still going to do dumb stuff, only slower.", "author": "Anonymous", "is_anonymous": true, "word_count": 14},
+        {"id": 84, "text": "The secret of staying young is to live honestly, eat slowly, and lie about your age.", "author": "Lucille Ball", "is_anonymous": false, "word_count": 16},
+        {"id": 85, "text": "Middle age is when your age starts to show around your middle.", "author": "Bob Hope", "is_anonymous": false, "word_count": 12},
+        {"id": 86, "text": "I'm at an age where my back goes out more than I do.", "author": "Phyllis Diller", "is_anonymous": false, "word_count": 13},
+        {"id": 87, "text": "Growing old is mandatory, but growing up is optional.", "author": "Walt Disney", "is_anonymous": false, "word_count": 9},
+        {"id": 88, "text": "You know you're old when you get that one candle on the cake. It's like, 'See if you can blow this out.'", "author": "Jerry Seinfeld", "is_anonymous": false, "word_count": 22},
+        {"id": 89, "text": "Youth is a gift of nature, but age is a work of art.", "author": "Stanislaw Jerzy Lec", "is_anonymous": false, "word_count": 14},
+        {"id": 90, "text": "Inside every older person is a younger person wondering what the hell happened.", "author": "Anonymous", "is_anonymous": true, "word_count": 13}
+      ]
+    },
+    {
+      "category_id": "funny_workforce",
+      "category_name": "Funny Quotes for Folks About to Enter the Workforce",
+      "description": "Brutally honest but humorous quotes about what's really waiting in the corporate jungle for new graduates.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 91, "text": "Your salary will disappear so fast you'll think you're donating plasma to your landlord.", "author": "Anonymous", "is_anonymous": true, "word_count": 14},
+        {"id": 92, "text": "The best part about having a job is telling people you have a job. The worst part is having to go to the job.", "author": "Bill Murray", "is_anonymous": false, "word_count": 25},
+        {"id": 93, "text": "The real world is like college but without the fun, the freedom, the naps, or the summer breaks.", "author": "Anonymous", "is_anonymous": true, "word_count": 18},
+        {"id": 94, "text": "Entry-level position: A job that requires 3-5 years of experience for entry.", "author": "Anonymous", "is_anonymous": true, "word_count": 12},
+        {"id": 95, "text": "Taking a job for the money is like marrying for good looks. Eventually, you'll hate both for valid reasons.", "author": "Anonymous", "is_anonymous": true, "word_count": 19},
+        {"id": 96, "text": "Adulthood is emailing 'per my last email' and 'as previously discussed' instead of saying 'learn to read' and 'listen when I talk.'", "author": "Anonymous", "is_anonymous": true, "word_count": 22},
+        {"id": 97, "text": "If you think education is expensive, try ignorance. If you think your starting salary is low, try paying for healthcare.", "author": "Derek Bok", "is_anonymous": false, "word_count": 20},
+        {"id": 98, "text": "Remember when you thought adults had it all figured out? Surprise! We're all just making it up as we go along, but now with deadlines.", "author": "Anonymous", "is_anonymous": true, "word_count": 26},
+        {"id": 99, "text": "Your dream job doesn't exist. That's why they have to pay you to show up.", "author": "Anonymous", "is_anonymous": true, "word_count": 15},
+        {"id": 100, "text": "You'll spend most of your career in meetings that could have been emails, writing emails that could have been texts, and explaining things that you already explained in the email no one read.", "author": "Anonymous", "is_anonymous": true, "word_count": 34},
+        {"id": 101, "text": "All the vacation days in the world can't save you from the Sunday scaries.", "author": "Anonymous", "is_anonymous": true, "word_count": 14},
+        {"id": 102, "text": "The good news is you'll never have homework again. The bad news is your entire life becomes homework.", "author": "Anonymous", "is_anonymous": true, "word_count": 18},
+        {"id": 103, "text": "The first day of a job is always the hardest and the longest, especially when you realize you have to do it all over again tomorrow.", "author": "Anonymous", "is_anonymous": true, "word_count": 26},
+        {"id": 104, "text": "Welcome to professional life: Where changing the font on your resume matters more than your GPA ever did.", "author": "Anonymous", "is_anonymous": true, "word_count": 18},
+        {"id": 105, "text": "Nobody tells you that 'finding your passion' usually happens after 5 pm, on weekends, or during bathroom breaks at your day job.", "author": "Anonymous", "is_anonymous": true, "word_count": 22}
+      ]
+    },
+    {
+      "category_id": "funny_family",
+      "category_name": "Funny Family Quotes",
+      "description": "Comedic material about parenting challenges, sibling dynamics, and family life — often used on greeting cards and social media.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 106, "text": "When your mother asks, 'Do you want a piece of advice?,' it is a mere formality. It doesn't matter if you answer yes or no. You're going to get it anyway.", "author": "Erma Bombeck", "is_anonymous": false, "word_count": 32},
+        {"id": 107, "text": "I want my children to have all the things I couldn't afford. Then I want to move in with them.", "author": "Phyllis Diller", "is_anonymous": false, "word_count": 20},
+        {"id": 108, "text": "Happiness is having a large, loving, caring, close-knit family in another city.", "author": "George Burns", "is_anonymous": false, "word_count": 12},
+        {"id": 109, "text": "I grew up with six brothers. That's how I learned to dance—waiting for the bathroom.", "author": "Bob Hope", "is_anonymous": false, "word_count": 15},
+        {"id": 110, "text": "I'm sure wherever my Dad is, he's looking down on us. He's not dead, just very condescending.", "author": "Jack Whitehall", "is_anonymous": false, "word_count": 17},
+        {"id": 111, "text": "When my kids become wild and unruly, I use a nice, safe playpen. When they're finished, I climb out.", "author": "Erma Bombeck", "is_anonymous": false, "word_count": 19},
+        {"id": 112, "text": "Insanity runs in my family. It practically gallops.", "author": "Mortimer Brewster", "source": "Arsenic and Old Lace", "source_type": "movie", "is_anonymous": false, "word_count": 8},
+        {"id": 113, "text": "I'd like to have a kid, but I'm not sure I'm ready to spend 10 years of my life constantly asking someone where his shoes are.", "author": "Damien Fahey", "is_anonymous": false, "word_count": 27},
+        {"id": 114, "text": "From the ages of 8 to 18, my family and I moved around a lot. Mostly we would just stretch, but occasionally one of us would actually get up to go to the fridge.", "author": "Jarod Kintz", "is_anonymous": false, "word_count": 35},
+        {"id": 115, "text": "The man who says his wife can't take a joke forgets that she took him.", "author": "Oscar Wilde", "is_anonymous": false, "word_count": 15},
+        {"id": 116, "text": "Everybody knows how to raise children, except the people who have them.", "author": "P.J. O'Rourke", "is_anonymous": false, "word_count": 12},
+        {"id": 117, "text": "There is no such thing as fun for the whole family.", "author": "Jerry Seinfeld", "is_anonymous": false, "word_count": 11},
+        {"id": 118, "text": "The other night, I ate at a really nice family restaurant. Every table had an argument going.", "author": "George Carlin", "is_anonymous": false, "word_count": 17},
+        {"id": 119, "text": "If you haven't got anything nice to say about anybody, come sit next to me.", "author": "Alice Roosevelt Longworth", "is_anonymous": false, "word_count": 15},
+        {"id": 120, "text": "When I was a kid, my parents moved a lot, but I always found them.", "author": "Rodney Dangerfield", "is_anonymous": false, "word_count": 15}
+      ]
+    },
+    {
+      "category_id": "funny_love",
+      "category_name": "Funny Love and Relationship Quotes",
+      "description": "Humorous takes on romance, marriage, and relationships — great for wedding toasts, anniversary cards, and dating profiles.",
+      "quote_count": 15,
+      "quotes": [
+        {"id": 121, "text": "If love is the answer, then could you rephrase the question?", "author": "Lily Tomlin", "is_anonymous": false, "word_count": 11},
+        {"id": 122, "text": "You know you are in love when the two of you can go grocery shopping together.", "author": "Woody Harrelson", "is_anonymous": false, "word_count": 16},
+        {"id": 123, "text": "Any man who can drive safely while kissing a pretty girl is simply not giving the kiss the attention it deserves.", "author": "Albert Einstein", "is_anonymous": false, "word_count": 21},
+        {"id": 124, "text": "A happy marriage is a long conversation which always seems too short.", "author": "Andre Marois", "is_anonymous": false, "word_count": 12},
+        {"id": 125, "text": "Some people care too much. I think it's called love.", "author": "Winnie the Pooh", "is_anonymous": false, "word_count": 10},
+        {"id": 126, "text": "Love is being stupid together.", "author": "Paul Valery", "is_anonymous": false, "word_count": 5},
+        {"id": 127, "text": "Nothing takes the taste out of peanut butter quite like unrequited love.", "author": "Charles M. Schulz", "is_anonymous": false, "word_count": 12},
+        {"id": 128, "text": "You know you're in love when you can't fall asleep because reality is finally better than your dreams.", "author": "Dr. Seuss", "is_anonymous": false, "word_count": 18},
+        {"id": 129, "text": "We're all a little weird. And life is a little weird. And when we find someone whose weirdness is compatible with ours, we join up with them and fall into mutually satisfying weirdness and call it love, true love.", "author": "Robert Fulghum", "is_anonymous": false, "word_count": 40},
+        {"id": 130, "text": "I love being married. It's so great to find that one special person you want to annoy for the rest of your life.", "author": "Rita Rudner", "is_anonymous": false, "word_count": 23},
+        {"id": 131, "text": "Never marry a man you wouldn't want to be divorced from.", "author": "Nora Ephron", "is_anonymous": false, "word_count": 11},
+        {"id": 132, "text": "When you trip over love, it is easy to get up. But when you fall in love, it is impossible to stand again.", "author": "Albert Einstein", "is_anonymous": false, "word_count": 24},
+        {"id": 133, "text": "My husband and I fell in love at first sight. Maybe I should have taken a second look.", "author": "Halley Reed", "is_anonymous": false, "word_count": 18},
+        {"id": 134, "text": "By all means, marry. If you get a good wife, you will be happy. If you get a bad one, you will be a philosopher.", "author": "Socrates", "is_anonymous": false, "word_count": 27},
+        {"id": 135, "text": "Remember that creating a successful marriage is like farming—you have to start over again every morning.", "author": "H. Jackson Brown, Jr.", "is_anonymous": false, "word_count": 16}
+      ]
+    }
+  ]
+}

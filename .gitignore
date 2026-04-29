@@ -1,0 +1,10 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Editors / OS
+.DS_Store
+*.swp

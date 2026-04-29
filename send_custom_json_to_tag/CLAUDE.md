@@ -1,0 +1,59 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Purpose
+
+Sends custom drawing payloads to an [openEPaperLink](https://github.com/jjwbruijn/OpenEPaperLink) e-paper tag via its Access Point's HTTP `/jsonupload` endpoint. Each `*.json` file in this directory is a status screen (LEDIG, OPPTATT, I Møte, Fokuserer, Dratt for dagen, etc.) that gets rendered on the tag.
+
+## Commands
+
+Push a screen to the tag — either from a JSON file or by giving text directly:
+
+```bash
+./upload.sh [-a AP] [-m MAC] <file.json>
+./upload.sh [-a AP] [-m MAC] [-s 2.6] -t "LEDIG" [-H "STATUS"]
+```
+
+The workflow is split across two files:
+
+- **`upload.sh`** — bash entry point. Parses flags, calls `render.py` when `-t` is used, and POSTs to `http://<AP>/jsonupload` with form fields `mac` and `json` (the latter either as `json@<file>` for file mode or `json=<payload>` for inline).
+- **`render.py`** — Python payload builder. Owns tag presets, font lists, word-wrap and font-fit logic. Emits JSON to stdout. Called directly with `--size`, `--header`, `--text`; also usable standalone.
+
+Flags on `upload.sh`:
+- `-a AP` — AP address (default `172.30.4.138`)
+- `-m MAC` — tag MAC
+- `-s STR` — tag size preset: `1.54 | 2.6 | 2.7 | 2.9 | 4.2 | 7.5` (default `2.6` = M2 296×152). Resolutions verified against the [OpenEPaperLink wiki](https://github.com/OpenEPaperLink/OpenEPaperLink/wiki).
+- `-t TEKST` — main text; font size and line-wrapping are computed automatically for the chosen tag. `\n` in the string becomes a forced break.
+- `-H TOPP` — header text (default `STATUS`)
+- `-h` — usage
+
+`-t` and a positional `FIL` are mutually exclusive; exactly one is required.
+
+### Template auto-layout (`render.py`)
+
+1. `PRESETS[size]` gives pure geometry (`width`, `height`, `header_y`, `line_y`, `line_thickness`, `body_y`) — no font choices baked in.
+2. `fit()` tries `HEADER_FONTS` / `BODY_FONTS` largest-first. Character width is estimated as `height × 0.45` for `bahnschrift*` (condensed) and `× 0.55` for `calibrib*`. A font is accepted if every `textwrap.wrap(break_long_words=False)` line fits the usable width **and** the stacked block fits the available height; otherwise the loop continues. If nothing fits, the smallest font is used and overflow is tolerated — better than rendering nothing.
+3. Body block is vertically centered in the space under the divider.
+4. Text color is `COLOR_NORMAL=1` for the header and `COLOR_ACCENT=2` for the body (red on BWR tags); alignment is always `ALIGN_CENTER=1`.
+
+Only fonts actually present on the AP filesystem as `fonts/*.vlw` are in the candidate lists: `bahnschrift70/30/20`, `calibrib30/16`, `twcondensed20`, `tahoma9`, `REFSAN12`. The older hand-written JSONs in this repo (`custom.json`, `ledig.json`, …) reference non-existent fonts like `calibrib70`/`calibrib80`/`bahnschrift50`; the AP must fall back on those.
+
+Presets only affect `-t`; a pre-made `FIL` is sent untouched.
+
+The AP's `/get_db?mac=<MAC>` endpoint returns tag metadata (`hwType`, `rotate`, etc.) and could be used to auto-detect size, but this script currently requires `-s`.
+
+## JSON payload format
+
+Each file is a top-level JSON array of draw-command objects, evaluated in order by the tag firmware. The three commands seen here:
+
+- `{"rotate": 0}` — screen rotation (0/1/2/3)
+- `{"line": [x1, y1, x2, y2, thickness]}`
+- `{"text": [x, y, "content", "fonts/<fontname>", color, alignment]}` — fonts are referenced by path on the AP's filesystem (e.g. `fonts/bahnschrift30`). The 5th arg is **color** (`1` = black/normal, `2` = accent/red on BWR tags) and the 6th is **alignment** (`1` = centered around x, per the existing hand-written JSONs).
+
+Coordinates assume the tag's native resolution with `rotate: 0`; the status bar pattern used across files is a top label at y≈10, a horizontal divider at y≈35, and the main status text at y≈40.
+
+## Gotchas
+
+- Norwegian filenames with non-ASCII characters exist (`møte.json`). Quote arguments when invoking `upload.sh`.
+- Some payloads in the tree have malformed JSON (missing comma between array elements, e.g. `fokus.json`, `ikke_forstyr.json`). These will be rejected by the AP. Validate with `jq . <file>` before uploading if a screen appears not to update.
