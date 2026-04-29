@@ -50,7 +50,7 @@ Flags on `upload.sh`:
 - `-a AP` — AP address (overrides `config.sh`)
 - `-m MAC` — explicit tag MAC; bypasses `tags` lookup
 - `-n NAVN` — pick a named tag from `config.sh`
-- `-s STR` — tag size preset: `1.54 | 2.6 | 2.7 | 2.9 | 4.2 | 7.5` (default `2.6` = M2 296×152). Resolutions verified against the [OpenEPaperLink wiki](https://github.com/OpenEPaperLink/OpenEPaperLink/wiki).
+- `-s STR` — tag size preset: `1.54 | 2.6 | 2.7 | 2.9 | 3.5 | 4.2 | 7.5` (default `2.6` = M2 296×152). Most resolutions verified against the [OpenEPaperLink wiki](https://github.com/OpenEPaperLink/OpenEPaperLink/wiki); `3.5` (HS BWY 284×184, hwType 0x74) and `2.6` (296×152) are tag-reported values not on the wiki.
 - `-t TEKST` — main text; font size and line-wrapping are computed automatically for the chosen tag. `\n` in the string becomes a forced break.
 - `-H TOPP` — header text (default `STATUS`)
 - `-c FARGE` / `-C FARGE` — body / header color (`black` | `red` | `1` | `2`, default black)

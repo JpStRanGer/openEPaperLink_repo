@@ -34,7 +34,7 @@ Bruk: $(basename "$0") [-a AP] [-m MAC | -n NAVN] [-s STR] (-t TEKST [-H TOPP] |
   -a AP      AP-adresse (overstyrer config)
   -m MAC     Tag MAC-adresse — direkte (16 hex-tegn)
   -n NAVN    Velg navngitt tag fra config.sh
-  -s STR     Tag-størrelse: 1.54 | 2.6 | 2.7 | 2.9 | 4.2 | 7.5 (standard: ${size})
+  -s STR     Tag-størrelse: 1.54 | 2.6 | 2.7 | 2.9 | 3.5 | 4.2 | 7.5 (standard: ${size})
   -t TEKST   Hovedtekst — fonten skaleres automatisk og teksten brytes
              ved behov.  Backslash-escapes tolkes:  \\n  \\t  \\r  \\\\  \\"
              \\'  \\0  \\xHH  \\uHHHH  \\UHHHHHHHH.
